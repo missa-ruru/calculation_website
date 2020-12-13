@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="x-ua-compatible" content="IE=edge">
-<meta name="description" content="ひきざんしよう！">
-<title>やさしい　ひきざん！</title>
+<meta name="description" content="たしざんしよう！">
+<title>ふつうの　たしざん！</title>
 <link rel="stylesheet" href="../css/normalize.css">
 <link rel="stylesheet" href="../css/main.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -27,7 +27,7 @@
 <section class="main">
 	<div>
 		<main>
-            <h2 class="heading">ひきざん</h2>
+            <h2 class="heading">たしざん</h2>
             <!-- 10個の計算式 -->
             <div>
                 <i id="formula1">NaN</i>
@@ -84,15 +84,12 @@
                 // 計算式
                 for(i = 0; i < 10; i++){
                     no = i + 1;
-                    number1[i] = Math.floor(Math.random()*10);
-                    number2[i] = Math.floor(Math.random()*10);
-                    while(number1[i] < number2[i]){
-                        number1[i] = Math.floor(Math.random()*19);
-                    }
+                    number1[i] = Math.floor(Math.random()*100);
+                    number2[i] = Math.floor(Math.random()*100);
                     
-                    answer[i] = number1[i] - number2[i];
+                    answer[i] = number1[i] + number2[i];
                     
-                    document.getElementById(formula_list[i]).textContent = '(' + no + ') ' + number1[i] + ' - ' + number2[i] + ' =';
+                    document.getElementById(formula_list[i]).textContent = '(' + no + ') ' + number1[i] + ' + ' + number2[i] + ' =';
                 }
                 
                 // 結果&答え の出力
@@ -102,10 +99,10 @@
                         no = i + 1;
                         user_input = document.getElementById(user_input_list[i]).input.value;
                         if(user_input == answer[i]){
-                            document.getElementById(answer_list[i]).textContent = '(' + no + ') ' + number1[i] + ' - ' + number2[i] + ' = ' + user_input  + '　せいかい！　' + 'こたえは　' + answer[i];
+                            document.getElementById(answer_list[i]).textContent = '(' + no + ') ' + number1[i] + ' + ' + number2[i] + ' = ' + user_input  + '　せいかい！　' + 'こたえは　' + answer[i];
                         }
                         else{
-                            document.getElementById(answer_list[i]).textContent = '(' + no + ') ' + number1[i] + ' - ' + number2[i] + ' = ' + user_input  + '　ざんねん...　' + 'こたえは　' + answer[i];
+                            document.getElementById(answer_list[i]).textContent = '(' + no + ') ' + number1[i] + ' + ' + number2[i] + ' = ' + user_input  + '　ざんねん...　' + 'こたえは　' + answer[i];
                         }
                     }
                     return false;
@@ -146,7 +143,7 @@
         </main>
     </div>
 </section>
-    
+
 <section class="main">
     <div class="container">
         <h2 class="home-h2">けいさんコーナー</h2>
@@ -214,4 +211,3 @@
 <script src="../script.js"></script>
 </body>
 </html>
-
